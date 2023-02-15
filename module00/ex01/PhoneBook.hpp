@@ -10,8 +10,10 @@ class PhoneBook
 		~PhoneBook(void);
 
 		Contact	contacts[8];
+		int		count;
 
-		void	add_contact(void);
+		void	add_contact(int ind);
+		void	display_contacts_list(void);
 		void	search_contact(void);
 };
 

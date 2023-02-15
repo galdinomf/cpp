@@ -1,5 +1,6 @@
 SRCS = main.cpp\
 	   Contact.cpp\
+	   PhoneBook.cpp\
 
 HDRS = Contact.hpp \
 	   PhoneBook.hpp
