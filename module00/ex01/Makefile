@@ -22,6 +22,8 @@ all : $(NAME)
 $(NAME): $(OBJS) $(GCHS)
 #	ar -crs $(NAME) $(OBJS)
 	$(CC) $(OBJS) $(GCHS) -o $(NAME)
+	$(RM) $(OBJS)
+	$(RM) $(GCHS)
 
 %.o : %.cpp
 	$(CC) $(FLAGS) -c $< -o $@

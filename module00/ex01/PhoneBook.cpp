@@ -41,9 +41,9 @@ void	PhoneBook::display_contacts_list(void)
 	int	i;
 
 	i = 0;
-	while (++i <= this->count)
+	while (++i <= (this->count < 8) * this->count + (this->count >= 8) * 8)
 	{
-		std::cout << std::right << std::setw(10) << this->contacts[i - 1].id << " | ";
+		std::cout << std::right << std::setw(10) << i << " | ";
 		s = this->contacts[i - 1].get_first_name().substr(0, 10);
 		s[9] = '.';
 		std::cout << std::right << std::setw(10) << s << " | ";
@@ -66,8 +66,8 @@ void	PhoneBook::search_contact(void)
 	this->display_contacts_list();
 	std::cout << "Index: ";
 	std::cin >> i;
-	//ft_atoi(s) >> i;
-	if ((i > 0) && (i <= this->count))
+	std::cin.clear();
+	if ((i > 0) && (i <= (this->count < 8) * this->count + (this->count >= 8) * 8))
 	{
 		std::cout << "First name: " << this->contacts[i - 1].get_first_name() << std::endl;
 		std::cout << "Last name: " << this->contacts[i - 1].get_last_name() << std::endl;
@@ -76,5 +76,8 @@ void	PhoneBook::search_contact(void)
 		std::cout << "Darkest secret: " << this->contacts[i - 1].get_darkest_secret() << std::endl;
 	}
 	else
+	{
 		std::cout << "Index out of range" << std::endl;
+		std::cin.ignore(10000, '\n');
+	}
 }
