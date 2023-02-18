@@ -1,7 +1,5 @@
 SRCS = main.cpp\
 	   Zombie.cpp\
-	   newZombie.cpp\
-	   randomChump.cpp\
 
 HDRS = Zombie.hpp\
 

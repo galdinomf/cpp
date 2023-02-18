@@ -1,7 +1,12 @@
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie::Zombie( void )
+{
+	return ;
+}
+
+Zombie::Zombie( std::string name ) : _name(name)
 {
 	return ;
 }
