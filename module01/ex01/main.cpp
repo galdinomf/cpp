@@ -13,7 +13,7 @@ int	main(void)
 
 	p1 = &zombieArray[0];
 
-	std::cout << "zombieArray = " << zombieArray << std::endl;
+	std::cout << "zombieArray =     " << zombieArray << std::endl;
 	std::cout << "&zombieArray[0] = " << p1 << std::endl;
 
 	i = -1;

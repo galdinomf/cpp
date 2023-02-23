@@ -54,6 +54,7 @@ void	Harl::complain( int level )
 			std::cout << "[ ERROR ]" << std::endl;
 			error();
 			std::cout << std::endl;
+			break ;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}

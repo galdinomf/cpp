@@ -7,13 +7,14 @@ int	main( void )
 	std::string&	stringREF = str;
 
 	str = "HI THIS IS BRAIN";
-	std::cout << &str << std::endl;
-	std::cout << &stringREF << std::endl;
-	std::cout << stringPTR << std::endl;
-	std::cout << "-----------" << std::endl;
-	std::cout << str << std::endl;
-	std::cout << stringREF << std::endl;
-	std::cout << *stringPTR << std::endl;
+	std::cout << "------ checking addresses ------" << std::endl;
+	std::cout << "&str =       " << &str << std::endl;
+	std::cout << "&stringREF = " << &stringREF << std::endl;
+	std::cout << "stringPTR  = " << stringPTR << std::endl;
+	std::cout << "------ checking values ------" << std::endl;
+	std::cout << "str =        " << str << std::endl;
+	std::cout << "stringREF  = " << stringREF << std::endl;
+	std::cout << "*stringPTR = " << *stringPTR << std::endl;
 
 	std::cout << "-----------" << std::endl;
 	std::string str2 = "ola";
