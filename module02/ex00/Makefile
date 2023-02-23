@@ -9,7 +9,7 @@ GCHS = $(HDRS:.hpp=.hpp.gch)
 
 FLAGS = -Wextra -Wall -Werror -std=c++98 -g
 
-NAME = fixed
+NAME = a.out
 
 RM = rm -f
 
