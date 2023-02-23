@@ -31,14 +31,17 @@ $(NAME): $(OBJS) $(GCHS)
 #	$(RM) $(GCHS)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
+	mkdir -p $(OBJ_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_DIR)%.hpp.gch : $(HDR_DIR)%.hpp
+	mkdir -p $(OBJ_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
 	$(RM) $(GCHS)
+	rmdir $(OBJ_DIR)
 
 fclean: clean
 	$(RM) $(NAME)

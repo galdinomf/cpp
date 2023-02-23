@@ -1,9 +1,7 @@
 SRCS = main.cpp\
-	   Zombie.cpp\
-	   newZombie.cpp\
-	   randomChump.cpp\
+	   Harl.cpp\
 
-HDRS = Zombie.hpp\
+HDRS = Harl.hpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -11,7 +9,7 @@ GCHS = $(HDRS:.hpp=.hpp.gch)
 
 FLAGS = -Wextra -Wall -Werror -std=c++98 -g
 
-NAME = zombies
+NAME = harlFilter
 
 RM = rm -f
 

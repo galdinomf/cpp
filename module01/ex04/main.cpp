@@ -18,10 +18,11 @@ int	main( void )
 		while (std::getline(ifs, s))
 		{
 			pos = s.find(s2);
-			if (pos != std::string::npos)
+			while (pos != std::string::npos)
 			{
 				s.erase(pos, s2.size());
 				s.insert(pos, s3);
+				pos = s.find(s2);
 			}
 			ofs << s << std::endl;
 		}
