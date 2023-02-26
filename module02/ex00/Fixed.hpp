@@ -9,6 +9,7 @@ class	Fixed
 		Fixed( const Fixed & src );
 		Fixed & operator=(const Fixed & rhs);
 		~Fixed( void );
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
+		
+		int 	getRawBits( void ) const;
+		void 	setRawBits( int const raw );
 };
