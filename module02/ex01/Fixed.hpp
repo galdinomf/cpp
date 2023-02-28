@@ -1,4 +1,7 @@
-#include <iostream>
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
+# include <iostream>
 
 class	Fixed
 {
@@ -23,3 +26,5 @@ class	Fixed
 std::ostream& operator << (std::ostream & o, const Fixed & fn);
 
 float	pow(int	base, int exp);
+
+#endif

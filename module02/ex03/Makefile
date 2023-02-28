@@ -5,8 +5,11 @@ SRCS = main.cpp\
 	   FixedArithmeticOperators.cpp\
 	   FixedIncrementOperators.cpp\
 	   FixedCompareFunctions.cpp\
+	   Point.cpp\
+	   bsp.cpp\
 
 HDRS = Fixed.hpp\
+	   Point.hpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
