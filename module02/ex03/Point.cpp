@@ -10,9 +10,9 @@ Point::Point( const float x, const float y) : _x(Fixed(x)), _y(Fixed(y))
 	return ;
 }
 
-Point::Point( const Point & src)
+Point::Point( const Point & src) : _x(src.getX()), _y(src.getY())
 {
-	*this = src;
+	return ;
 }
 
 Point& Point::operator=(const Point &)

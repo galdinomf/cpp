@@ -1,12 +1,12 @@
 #include "Point.hpp"
 
-float	signedTriangleArea(const Point & p1, const Point & p2, const Point & p3)
+float	signedTriangleArea(const Point p1, const Point p2, const Point p3)
 {
 	return  ((p1.getX().toFloat() - p3.getX().toFloat()) * (p2.getY().toFloat() - p3.getY().toFloat()) - \
 			(p2.getX().toFloat() - p3.getX().toFloat()) * (p1.getY().toFloat() - p3.getY().toFloat()));
 }
 
-bool	bsp(Point const & a, Point const & b, Point const & c, Point const & point)
+bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	float	d1, d2, d3;
 	bool	has_neg, has_pos;
