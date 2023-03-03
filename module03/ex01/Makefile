@@ -1,6 +1,9 @@
 SRCS = main.cpp\
+	   ClapTrap.cpp\
+	   ScavTrap.cpp\
 
-HDRS = 
+HDRS = ClapTrap.hpp\
+	   ScavTrap.hpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -8,7 +11,7 @@ GCHS = $(HDRS:.hpp=.hpp.gch)
 
 FLAGS = -Wextra -Wall -Werror -std=c++98 -g
 
-NAME = zombies
+NAME = a.out
 
 RM = rm -f
 
