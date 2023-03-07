@@ -1,6 +1,13 @@
 SRCS = main.cpp\
+	   ClapTrap.cpp\
+	   ScavTrap.cpp\
+	   FragTrap.cpp\
+	   DiamondTrap.cpp\
 
-HDRS = 
+HDRS = ClapTrap.hpp\
+	   ScavTrap.hpp\
+	   FragTrap.hpp\
+	   DiamondTrap.hpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
