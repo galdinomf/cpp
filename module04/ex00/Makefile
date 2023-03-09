@@ -5,15 +5,18 @@ SRCS = main.cpp\
 	   WrongAnimal.cpp\
 	   WrongCat.cpp\
 
-HDRS = Animal.hpp\
-	   Cat.hpp\
+HDRS = Cat.hpp\
 	   Dog.hpp\
 	   WrongAnimal.hpp\
 	   WrongCat.hpp\
 
-OBJS = $(SRCS:.cpp=.o)
+HDR_DIR = includes/
+SRC_DIR = src/
+OBJ_DIR = obj/
 
-GCHS = $(HDRS:.hpp=.hpp.gch)
+OBJS = $(addprefix $(OBJ_DIR), $(notdir $(SRCS:.cpp=.o)))
+
+GCHS = $(addprefix $(OBJ_DIR), $(notdir $(HDRS:.hpp=.hpp.gch)))
 
 FLAGS = -Wextra -Wall -Werror -std=c++98 -g
 
@@ -28,18 +31,21 @@ all : $(NAME)
 $(NAME): $(OBJS) $(GCHS)
 #	ar -crs $(NAME) $(OBJS)
 	$(CC) $(OBJS) $(GCHS) -o $(NAME)
-	$(RM) $(OBJS)
-	$(RM) $(GCHS)
+# 	$(RM) $(OBJS)
+#	$(RM) $(GCHS)
 
-%.o : %.cpp
+$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
+	mkdir -p $(OBJ_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
-%.hpp.gch : %.hpp
+$(OBJ_DIR)%.hpp.gch : $(HDR_DIR)%.hpp
+	mkdir -p $(OBJ_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
 	$(RM) $(GCHS)
+	rmdir $(OBJ_DIR)
 
 fclean: clean
 	$(RM) $(NAME)
