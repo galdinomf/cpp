@@ -15,5 +15,6 @@ int	main( void )
 	std::cout << "c2.gethitPoints()    = " << c2.getHitPoints() << std::endl;
 	std::cout << "c2.getEnergyPoints() = " << c2.getEnergyPoints() << std::endl;
 	std::cout << "c2.getAttackDamage() = " << c2.getAttackDamage() << std::endl;
+	c2.attack("Unnamed");
 	return 0;
 }

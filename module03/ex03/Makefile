@@ -13,7 +13,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 GCHS = $(HDRS:.hpp=.hpp.gch)
 
-FLAGS = -Wextra -Wall -Werror -std=c++98 -g
+FLAGS = -Wextra -Wall -Werror -std=c++98 -g -Wshadow -Wno-shadow
 
 NAME = a.out
 
