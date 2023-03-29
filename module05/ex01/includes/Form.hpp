@@ -20,6 +20,14 @@ class Form
 		int			getSignGrade( void ) const ;
 		int			getExecGrade( void ) const ;
 
+		class	GradeTooHighException : public std::exception {
+			const char* what() const throw() { return "Grade too high!"; }
+		};
+
+		class	GradeTooLowException : public std::exception {
+			const char* what() const throw() { return "Grade too low!"; }
+		};
+
 	private:
 		const std::string	_name;
 		bool				_isSigned;

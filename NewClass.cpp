@@ -14,7 +14,10 @@ NewClass::NewClass( const NewClass & src )
 NewClass&	NewClass::operator = ( const NewClass & rhs )
 {
 	std::cout << "NewClass copy assignment operator called." << std::endl;
+	if (this != &rhs)
+	{
 	// insert members copy here
+	}
 	return *this;
 }
 
