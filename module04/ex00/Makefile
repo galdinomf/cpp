@@ -30,7 +30,7 @@ all : $(NAME)
 
 $(NAME): $(OBJS) $(GCHS)
 #	ar -crs $(NAME) $(OBJS)
-	$(CC) $(OBJS) $(GCHS) -o $(NAME)
+	$(CC) $(OBJS) -o $(NAME)
 # 	$(RM) $(OBJS)
 #	$(RM) $(GCHS)
 
