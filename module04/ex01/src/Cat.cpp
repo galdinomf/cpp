@@ -8,7 +8,7 @@ Cat::Cat( void )
 	this->brain = new Brain();
 }
 
-Cat::Cat( const Cat & src )
+Cat::Cat( const Cat & src ) : Animal()
 {
 	std::cout << "Cat copy constructor called." << std::endl;
 	*this = src;

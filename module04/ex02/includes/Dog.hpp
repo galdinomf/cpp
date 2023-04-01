@@ -11,12 +11,11 @@ class Dog : public AAnimal
 		Dog( const Dog & src );
 		Dog& operator = ( const Dog & rhs);
 		~Dog( void );
-		
-		Brain*	brain;
 
 		void	makeSound( void ) const;
 
 	private:
+		Brain*	brain;
 };
 
 #endif

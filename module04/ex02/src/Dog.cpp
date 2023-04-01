@@ -8,7 +8,7 @@ Dog::Dog( void )
 	this->brain = new Brain();
 }
 
-Dog::Dog( const Dog & src )
+Dog::Dog( const Dog & src ) : AAnimal()
 {
 	std::cout << "Dog copy constructor called." << std::endl;
 	*this = src;

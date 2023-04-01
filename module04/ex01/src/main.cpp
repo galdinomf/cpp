@@ -23,8 +23,8 @@ int main()
 	std::cout << "address of a: " << &a << std::endl;
 	std::cout << "address of *animals[0]: " << animals[0] << std::endl;
 
-	std::cout << "brain of a: " << ((Cat*) &a)->brain << std::endl;
-	std::cout << "brain of *animals[0]: " << ((Cat*) animals[0])->brain << std::endl;
+	// std::cout << "brain of a: " << ((Cat*) &a)->brain << std::endl;
+	// std::cout << "brain of *animals[0]: " << ((Cat*) animals[0])->brain << std::endl;
 
 
 	for (i = 0; i < 4; i++)
