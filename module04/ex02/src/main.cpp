@@ -19,12 +19,12 @@ int main()
 	std::cout << "---------- second dog ------------" << std::endl;
 	animals[3] = new Dog();
 
-	// const Animal a(*animals[0]);
+	// const AAnimal a(*animals[0]);
 	// std::cout << "address of a: " << &a << std::endl;
 	// std::cout << "address of *animals[0]: " << animals[0] << std::endl;
 
-	// std::cout << "brain of a: " << ((Cat*) &a)->brain << std::endl;
-	// std::cout << "brain of *animals[0]: " << ((Cat*) animals[0])->brain << std::endl;
+	// std::cout << "brain of a: " << ((Cat*) &a)->getBrain() << std::endl;
+	// std::cout << "brain of *animals[0]: " << ((Cat*) animals[0])->getBrain() << std::endl;
 
 
 	for (i = 0; i < 4; i++)

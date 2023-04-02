@@ -24,3 +24,11 @@ Brain::~Brain( void )
 {
 	std::cout << "Brain destructor called." << std::endl;
 }
+std::string	Brain::getIdea( int i )
+{
+	return this->ideas[i];
+}
+void	Brain::setIdea( std::string s, int i)
+{
+	this->ideas[i].assign(s);
+}

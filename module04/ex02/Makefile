@@ -1,5 +1,5 @@
 SRCS = main.cpp\
-	   Animal.cpp\
+	   AAnimal.cpp\
 	   Cat.cpp\
 	   Dog.cpp\
 	   WrongAnimal.cpp\
@@ -11,6 +11,7 @@ HDRS = Cat.hpp\
 	   WrongAnimal.hpp\
 	   WrongCat.hpp\
 	   Brain.hpp\
+	   AAnimal.hpp\
 
 HDR_DIR = includes/
 SRC_DIR = src/
