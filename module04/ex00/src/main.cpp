@@ -43,6 +43,10 @@ int main()
 	const WrongCat wc = WrongCat();
 	std::cout << wc.getType() << " " << std::endl;
 	wc.makeSound();
+	std::cout << "-----------------------------------" << std::endl;
+	const WrongCat wc2 = wc;
+	std::cout << wc.getType() << " " << std::endl;
+	wc.makeSound();
 
 	delete meta;
 	delete i;
