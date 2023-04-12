@@ -10,6 +10,7 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : AForm::AFor
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src ) : AForm::AForm( src.getName(), src.getSignGrade(), src.getExecGrade() )
 {
 	std::cout << "ShrubberyCreationForm copy constructor called." << std::endl;
+	this->_targetName = src.getTargetName();
 	*this = src;
 }
 
@@ -28,7 +29,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void )
 	std::cout << "ShrubberyCreationForm destructor called." << std::endl;
 }
 
-std::string	ShrubberyCreationForm::getTargetName( void )
+std::string	ShrubberyCreationForm::getTargetName( void ) const
 {
 	return this->_targetName;
 }

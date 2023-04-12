@@ -77,6 +77,14 @@ void	AForm::beSigned( const Bureaucrat & bureaucrat )
 		throw AForm::GradeTooLowException();
 }
 
+void	AForm::canBeExecuted( const Bureaucrat & executor ) const
+{
+	if (!this->_isSigned)
+		throw AForm::FormNotSignedException();
+	else if (executor.getGrade() > this->_execGrade)
+		throw Bureaucrat::GradeTooLowException();
+}
+
 std::ostream & operator << (std::ostream & o, const AForm & Aform)
 {
 	std::string	signStatus;

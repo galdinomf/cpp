@@ -1,22 +1,22 @@
 #include <iostream>
-#include "../includes/ShrubberyCreationForm.hpp"
+#include "../includes/PresidentialPardonForm.hpp"
 #include "../includes/Bureaucrat.hpp"
 
 int	main( void )
 {
-	ShrubberyCreationForm a("home");
-	ShrubberyCreationForm b("Moa");
-	ShrubberyCreationForm c( b );
-	ShrubberyCreationForm d = b;
+	PresidentialPardonForm a("home");
+	PresidentialPardonForm b("Moa");
+	PresidentialPardonForm c( b );
+	PresidentialPardonForm d = b;
 
 	// try{
-	// 	ShrubberyCreationForm f(10, 00);
+	// 	PresidentialPardonForm f(10, 00);
 	// }	
-	// catch(ShrubberyCreationForm::GradeTooHighException& e){
-	// 	std::cout << "Tried to instantiate a too high grade ShrubberyCreationForm." << std::endl;
+	// catch(PresidentialPardonForm::GradeTooHighException& e){
+	// 	std::cout << "Tried to instantiate a too high grade PresidentialPardonForm." << std::endl;
 	// }
-	// catch(ShrubberyCreationForm::GradeTooLowException& e){
-	// 	std::cout << "Tried to instantiate a too low grade ShrubberyCreationForm." << std::endl;
+	// catch(PresidentialPardonForm::GradeTooLowException& e){
+	// 	std::cout << "Tried to instantiate a too low grade PresidentialPardonForm." << std::endl;
 	// }
 
 	std::cout << " --------------------------------------- " << std::endl;
@@ -30,13 +30,15 @@ int	main( void )
 	std::cout << d << std::endl;
 	std::cout << " --------------------------------------- " << std::endl;
 
-	// Bureaucrat my_bureaucrat(50);
-	// my_bureaucrat.signForm(d);
+	Bureaucrat my_bureaucrat("Galdo", 3);
+	my_bureaucrat.signForm(d);
 
-	// try { d.beSigned(my_bureaucrat); }
-	// catch(ShrubberyCreationForm::GradeTooLowException& e){
-	// 	std::cout << "ERROR: Bureaucrat has a too low grade to sign the ShrubberyCreationForm." << std::endl;
-	// }
+	try { d.beSigned(my_bureaucrat); }
+	catch(PresidentialPardonForm::GradeTooLowException& e){
+		std::cout << "ERROR: Bureaucrat has a too low grade to sign the PresidentialPardonForm." << std::endl;
+	}
+
+	my_bureaucrat.executeForm(d);
 	std::cout << d << std::endl;
 
 	return 0;

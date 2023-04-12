@@ -2,10 +2,14 @@ SRCS = main.cpp\
 	   Bureaucrat.cpp\
 	   AForm.cpp\
 	   ShrubberyCreationForm.cpp\
+	   RobotomyRequestForm.cpp\
+	   PresidentialPardonForm.cpp\
 
 HDRS = Bureaucrat.hpp\
 	   AForm.hpp\
 	   ShrubberyCreationForm.hpp\
+	   RobotomyRequestForm.hpp\
+	   PresidentialPardonForm.hpp\
 
 HDR_DIR = includes/
 SRC_DIR = src/
