@@ -1,5 +1,7 @@
 #include "../includes/AForm.hpp"
 #include "../includes/RobotomyRequestForm.hpp"
+#include <stdlib.h>
+#include <time.h>
 
 RobotomyRequestForm::RobotomyRequestForm( std::string target ) : AForm::AForm( "RobotomyRequestForm", 72, 45 )
 {
@@ -32,4 +34,20 @@ RobotomyRequestForm::~RobotomyRequestForm( void )
 std::string	RobotomyRequestForm::getTargetName( void ) const
 {
 	return this->_targetName;
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
+{
+	float	p;
+
+	(void) executor;
+	/* initialize random seed: */
+	srand (time(NULL));
+
+	std::cout << " * Drilling noises * " << std::endl;
+	p = (float) rand() / (float) RAND_MAX;
+	if (p > 0.5)
+		std::cout << _targetName << " has been successfully robotomized." << std::endl;
+	else
+		std::cout << "Rodotomy failed." << std::endl;
 }

@@ -1,13 +1,16 @@
 #include <iostream>
 #include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/ShrubberyCreationForm.hpp"
+#include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/Bureaucrat.hpp"
 
 int	main( void )
 {
-	PresidentialPardonForm a("home");
+	RobotomyRequestForm a("home");
 	PresidentialPardonForm b("Moa");
 	PresidentialPardonForm c( b );
 	PresidentialPardonForm d = b;
+	ShrubberyCreationForm s("ball");
 
 	// try{
 	// 	PresidentialPardonForm f(10, 00);
@@ -30,16 +33,18 @@ int	main( void )
 	std::cout << d << std::endl;
 	std::cout << " --------------------------------------- " << std::endl;
 
-	Bureaucrat my_bureaucrat("Galdo", 3);
+	Bureaucrat my_bureaucrat("Galdo", 150);
 	
 
-	try { my_bureaucrat.signForm(d); }
-	catch(PresidentialPardonForm::GradeTooLowException& e){
-		std::cout << "ERROR: Bureaucrat has a too low grade to sign the PresidentialPardonForm." << std::endl;
-	}
-
+	my_bureaucrat.signForm(d);
 	my_bureaucrat.executeForm(d);
-	std::cout << d << std::endl;
+	
+
+	my_bureaucrat.signForm(a);
+	my_bureaucrat.executeForm(a);
+
+	my_bureaucrat.signForm(s);
+	my_bureaucrat.executeForm(s);
 
 	return 0;
 }
