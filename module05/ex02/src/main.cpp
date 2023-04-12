@@ -33,7 +33,7 @@ int	main( void )
 	std::cout << d << std::endl;
 	std::cout << " --------------------------------------- " << std::endl;
 
-	Bureaucrat my_bureaucrat("Galdo", 150);
+	Bureaucrat my_bureaucrat("Galdo", 3);
 	
 
 	my_bureaucrat.signForm(d);
