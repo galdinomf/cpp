@@ -1,6 +1,5 @@
 #include "../includes/AForm.hpp"
 #include "../includes/ShrubberyCreationForm.hpp"
-#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : AForm::AForm( "ShrubberyCreationForm", 145, 137 )
 {
@@ -33,14 +32,4 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void )
 std::string	ShrubberyCreationForm::getTargetName( void ) const
 {
 	return this->_targetName;
-}
-
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
-{
-	std::ofstream	ofs;
-
-	ofs.open((_targetName + "_shrubbery").c_str(), std::ios::out | std::ios::trunc);
-	ofs << "       A\n      / \\\n    B     C\n   / \\   / \\ \n  D   E F   G" << std::endl;
-	ofs.close();
-	(void) executor;
 }
