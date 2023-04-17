@@ -35,7 +35,7 @@ Bureaucrat::Bureaucrat( std::string new_name ) : _name(new_name)
 	this->_grade = 100;
 }
 
-Bureaucrat::Bureaucrat( std::string new_name ) : _name(new_name)
+Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _name(src.getName())
 {
 	std::cout << "Bureaucrat copy constructor called." << std::endl;
 	*this = src;
