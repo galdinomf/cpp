@@ -32,6 +32,10 @@ int main()
 
 	std::cout << "-----------------------------------" << std::endl;
 
+	std::cout << meta->getType() << " " << std::endl;
+
+	std::cout << "-----------------------------------" << std::endl;
+
 	const Dog d = Dog();
 	std::cout << d.getType() << " " << std::endl;
 	d.makeSound();

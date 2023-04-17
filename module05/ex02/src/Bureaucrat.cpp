@@ -35,7 +35,7 @@ Bureaucrat::Bureaucrat( std::string new_name ) : _name(new_name)
 	this->_grade = 100;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat & src )
+Bureaucrat::Bureaucrat( std::string new_name ) : _name(new_name)
 {
 	std::cout << "Bureaucrat copy constructor called." << std::endl;
 	*this = src;
@@ -44,7 +44,6 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src )
 Bureaucrat&	Bureaucrat::operator = ( const Bureaucrat & rhs )
 {
 	std::cout << "Bureaucrat copy assignment operator called." << std::endl;
-	//this->_name = rhs.getName();
 	this->_grade = rhs.getGrade();
 	return *this;
 }
@@ -113,6 +112,6 @@ void	Bureaucrat::executeForm(AForm const & form) const
 
 std::ostream& operator << (std::ostream & o, const Bureaucrat & bureaucrat)
 {
-	o << bureaucrat.getName() << "bureaucrat grade " << bureaucrat.getGrade();
+	o << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return o;
 }

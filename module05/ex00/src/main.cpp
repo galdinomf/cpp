@@ -4,11 +4,13 @@
 int	main( void )
 {
 	Bureaucrat a;
-	Bureaucrat b(50);
+	Bureaucrat b("Galdo", 50);
 	Bureaucrat c( b );
 	Bureaucrat d;
 
 	d = b;
+
+	std::cout << c << std::endl;
 
 	try {
 		//Bureaucrat e(170);
