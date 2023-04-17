@@ -33,11 +33,15 @@ int	main( void )
 	// f.incGrade();
 	// std::cout << f.getName() << "'s grade = " << f.getGrade() << std::endl;
 
-	Bureaucrat f = Bureaucrat("Moa", 149);
-	f.decGrade();
+	try{
+	Bureaucrat f = Bureaucrat("Moa", 2);
+	f.incGrade();
 	std::cout << f.getName() << "'s grade = " << f.getGrade() << std::endl;
-	f.decGrade();
+	f.incGrade();
 	std::cout << f.getName() << "'s grade = " << f.getGrade() << std::endl;
+	}
+	catch(Bureaucrat::GradeTooLowException& e){std::cout << "Tried to decrease bureaucrat's grade below the minimum" << std::endl;}
+	catch(Bureaucrat::GradeTooHighException& e){std::cout << "Tried to increase bureaucrat's grade above the maximum" << std::endl;}
 
 	return 0;
 }
