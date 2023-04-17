@@ -10,8 +10,8 @@ int	main( void )
 
 //	rrf = someRandomIntern.makeForm("robotomy form", "Moa");
 //	rrf = someRandomIntern.makeForm("shrubbery form", "Moa");
-//	rrf = someRandomIntern.makeForm("presidential form", "Moa");
-	rrf = someRandomIntern.makeForm("non-existent form", "Moa");
+	rrf = someRandomIntern.makeForm("presidential form", "Moa");
+	// rrf = someRandomIntern.makeForm("non-existent form", "Moa");
 
 	if (rrf) {
 		b.signForm(*rrf);

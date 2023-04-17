@@ -32,13 +32,8 @@ int	main( void )
 	std::cout << d << std::endl;
 	std::cout << " --------------------------------------- " << std::endl;
 
-	Bureaucrat my_bureaucrat(50);
+	Bureaucrat my_bureaucrat(51);
 	my_bureaucrat.signForm(d);
-
-	// try { d.beSigned(my_bureaucrat); }
-	// catch(Form::GradeTooLowException& e){
-	// 	std::cout << "ERROR: Bureaucrat has a too low grade to sign the form." << std::endl;
-	// }
 	std::cout << d << std::endl;
 
 	return 0;
