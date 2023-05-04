@@ -9,7 +9,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 FLAGS = -Wextra -Wall -Werror -std=c++98 -g
 
-NAME = a.out
+NAME = convert
 
 RM = rm -f
 

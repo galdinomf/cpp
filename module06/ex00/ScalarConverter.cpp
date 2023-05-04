@@ -26,15 +26,28 @@ ScalarConverter::~ScalarConverter( void )
 	std::cout << "ScalarConverter destructor called." << std::endl;
 }
 
-void	display_result(char c, int n, float f, double d)
+static void	display_result(char c, int n, float f, double d)
 {
-	std::cout << "char: " << c << std::endl;
+	double	integral;
+	bool	has_frac_part = (modf(f, &integral) == 0);
+
+	if ((c > 31) && (c < 126))
+		std::cout << "char: \'" << c << "\'" << std::endl;
+	else
+		std::cout << "char: Non displayable" << std::endl;
+
 	std::cout << "int: " << n << std::endl;
-	std::cout << "float: " << f << std::fixed << std::endl;
-	std::cout << "double: " << d << std::endl;
+	if (has_frac_part)
+		std::cout << "float: " << f << ".0f" << std::endl;
+	else
+		std::cout << "float: " << f << "f" << std::endl;
+	if (has_frac_part)
+		std::cout << "double: " << d << ".0" << std::endl;
+	else
+		std::cout << "double: " << d << std::endl;
 }
 
-void	process_float( std::string input )
+static void	process_float( std::string input )
 {
 	if ((input.compare("nanf") == 0) || (input.compare("+inff") == 0) || (input.compare("-inff") == 0))
 	{
@@ -53,6 +66,25 @@ void	process_float( std::string input )
 	}
 }
 
+static void	process_double( std::string input )
+{
+	if ((input.compare("nan") == 0) || (input.compare("+inf") == 0) || (input.compare("-inf") == 0))
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: " << input << "f" << std::endl;
+		std::cout << "double: " << input << std::endl;
+	}
+	else
+	{
+		double d = std::strtod(input.c_str(), NULL);
+		float f = static_cast<float>(d);
+		char c = static_cast<char>(d);
+		int n = static_cast<int>(d);
+		display_result(c, n, f, d);
+	}
+}
+
 void	ScalarConverter::convert( std::string input )
 {
 	char	c = 0;
@@ -67,14 +99,17 @@ void	ScalarConverter::convert( std::string input )
 		f = input[1];
 		d = input[1];
 	}
-	else if (input[input.length() - 1] == 'f')
+	else if ((input[input.length() - 1] == 'f') && \
+			(input.compare("+inf") != 0) && (input.compare("-inf") != 0))
 	{
 		process_float(input);
 		return ;
 	}
-	else if (input.find('.') != std::string::npos)
+	else if ((input.find('.') != std::string::npos) || (input.compare("nan") == 0) || \
+				(input.compare("+inf") == 0) || (input.compare("-inf") == 0))
 	{
-		//input é double
+		process_double(input);
+		return ;
 	}
 	else
 	{
