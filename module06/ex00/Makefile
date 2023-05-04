@@ -1,10 +1,11 @@
 SRCS = main.cpp\
+	   ScalarConverter.cpp\
 
-# HDRS = 
+HDRS = ScalarConverter.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-# GCHS = $(HDRS:.hpp=.hpp.gch)
+#GCHS = $(HDRS:.hpp=.hpp.gch)
 
 FLAGS = -Wextra -Wall -Werror -std=c++98 -g
 
@@ -16,7 +17,7 @@ CC = c++
 
 all : $(NAME)
 
-$(NAME): $(OBJS) $(GCHS)
+$(NAME): $(OBJS)
 #	ar -crs $(NAME) $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
 #	$(RM) $(OBJS)
@@ -24,9 +25,6 @@ $(NAME): $(OBJS) $(GCHS)
 
 %.o : %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
-
-#%.hpp.gch : %.hpp
-#	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
