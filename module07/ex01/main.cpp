@@ -14,7 +14,7 @@ void	char_up(char* c)
 template <typename T>
 void	put_t(T t)
 {
-	std::cout << t << std::endl;
+	std::cout << *t << std::endl;
 }
 
 int	main( void )
@@ -31,6 +31,10 @@ int	main( void )
 	for (int i = 0; i < 6; i++)
 		std::cout << c[i] << std::endl;
 	
+	std::cout << "Using function template to print array of chars out:" << std::endl;
 	::iter(c, 6, put_t);
+
+	std::cout << "Using function template to print array of integers out:" << std::endl;
+	::iter(a, 4, put_t);
 	return 0;
 }
