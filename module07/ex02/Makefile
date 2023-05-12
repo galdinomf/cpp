@@ -12,7 +12,7 @@ CC = c++
 
 all : $(NAME)
 
-$(NAME): $(OBJS) $(GCHS)
+$(NAME): $(OBJS) Array.hpp
 	$(CC) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
