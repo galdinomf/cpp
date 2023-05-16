@@ -51,3 +51,33 @@ void	Span::displayNumbers( void ) const
 		std::cout << *it << ' ';
 	std::cout << std::endl;
 }
+
+int	Span::longestSpan( void ) const
+{
+	if (_numbers.size() < 2){
+		throw std::out_of_range("Not enough numbers!");
+		return 0;
+	}
+	else{
+		std::vector<int>::const_iterator itMin = std::min_element(_numbers.begin(), _numbers.end());
+		std::vector<int>::const_iterator itMax = std::max_element(_numbers.begin(), _numbers.end());		
+		return *itMax - *itMin;
+	}
+}
+
+int	Span::shortestSpan( void ) const
+{
+	if (_numbers.size() < 2){
+		throw std::out_of_range("Not enough numbers!");
+		return INT_MAX;
+	}
+	else{
+		std::vector<int> sorted_numbers (_numbers.begin(), _numbers.end());
+		std::sort(sorted_numbers.begin(), sorted_numbers.end());
+		int diff = INT_MAX;
+		for (std::vector<int>::const_iterator it = sorted_numbers.begin(); it != sorted_numbers.end() - 1; it++)
+			if (std::abs(*it - *(it + 1)) < diff)
+				diff = std::abs(*it - *(it + 1));
+		return diff;
+	}
+}

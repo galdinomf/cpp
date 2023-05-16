@@ -3,6 +3,8 @@
 
 # include <vector>
 # include <iostream>
+# include <algorithm>
+# include <limits.h>
 
 class Span
 {
@@ -17,6 +19,8 @@ class Span
 		void				addNumber( int );
 
 		void				displayNumbers( void ) const;
+		int					longestSpan( void ) const;
+		int					shortestSpan( void ) const;
 
 	private:
 		std::vector<int>	_numbers;
