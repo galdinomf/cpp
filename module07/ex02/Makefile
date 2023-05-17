@@ -12,11 +12,11 @@ CC = c++
 
 all : $(NAME)
 
-$(NAME): $(OBJS) Array.hpp
+$(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@ -I ./includes
 
 clean:
 	$(RM) $(OBJS)
