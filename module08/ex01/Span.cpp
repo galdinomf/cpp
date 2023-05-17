@@ -81,3 +81,19 @@ int	Span::shortestSpan( void ) const
 		return diff;
 	}
 }
+
+
+void	Span::populateNumbers( unsigned int n )
+{
+	int arr[n];
+
+	if (_numbers.size() + n > _maxSize)
+		throw std::out_of_range("Too many new numbers!");
+	else
+	{
+		srand(time(NULL));
+		for (unsigned int i = 0; i < n; i++)
+			arr[i] = rand();
+	}
+	_numbers.insert(_numbers.end(), arr, arr + n);
+}
