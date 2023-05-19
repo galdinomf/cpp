@@ -1,10 +1,10 @@
 #include <iostream>
 #include "MutantStack.hpp"
+#include <list>
 
 int main()
 {
 	MutantStack<int> mstack;
-	// std::list<int> mstack;
 
 	mstack.push(5);
 	mstack.push(17);
@@ -43,3 +43,45 @@ int main()
 	std::cout << "mstack's size before exiting program = " << mstack.size() << std::endl;
 	return 0;
 }
+
+// int main()
+// {
+// 	std::list<int> mstack;
+
+// 	mstack.push_back(5);
+// 	mstack.push_back(17);
+// 	std::cout << *mstack.rbegin() << std::endl;
+// 	mstack.pop_back();
+// 	std::cout << mstack.size() << std::endl;
+// 	mstack.push_back(3);
+// 	mstack.push_back(5);
+// 	mstack.push_back(737);
+// 	//[...]
+// 	mstack.push_back(0);
+// 	std::list<int>::iterator it = mstack.begin();
+// 	std::list<int>::iterator ite = mstack.end();
+// 	++it;
+// 	--it;
+// 	std::cout << "printing list mstack out" << std::endl;
+// 	while (it != ite)
+// 	{
+// 		std::cout << *it << std::endl;
+// 		++it;
+// 	}
+// 	std::list<int> s(mstack);
+// 	std::cout << "printing list s out" << std::endl;
+// 	while (!s.empty())
+// 	{
+// 		std::cout << *s.rbegin() << std::endl;
+// 		s.pop_back();
+// 	}
+// 	std::cout << "printing mstack out while emptying it" << std::endl;
+// 	while (!mstack.empty())
+// 	{
+// 		std::cout << "mstack's size = " << mstack.size() << std::endl;
+// 		std::cout << *mstack.rbegin() << std::endl;
+// 		mstack.pop_back();
+// 	}
+// 	std::cout << "mstack's size before exiting program = " << mstack.size() << std::endl;
+// 	return 0;
+// }

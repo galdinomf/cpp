@@ -47,9 +47,12 @@ std::vector<int>	Span::getArray( void ) const
 
 void	Span::displayNumbers( void ) const
 {
-	for (std::vector<int>::const_iterator it = _numbers.begin(); it != _numbers.end(); it++)
-		std::cout << *it << ' ';
-	std::cout << std::endl;
+	if (_maxSize > 0)
+	{
+		for (std::vector<int>::const_iterator it = _numbers.begin(); it != _numbers.end(); it++)
+			std::cout << *it << ' ';
+		std::cout << std::endl;
+	}
 }
 
 int	Span::longestSpan( void ) const

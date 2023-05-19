@@ -13,14 +13,26 @@ int	main( void )
 	numbers.push_back(3);
 	numbers.push_back(4);
 	numbers.push_back(5);
-	std::vector<int>::iterator it = easyfind(numbers, 5);
-	std::cout << *it << std::endl;
+	int	n = 5;
+	std::vector<int>::iterator it;
+	try
+	{
+		it = easyfind(numbers, n);	
+		std::cout << *it << std::endl;
+	}
+	catch(...){std::cout << "value " << n << " not found" << std::endl;}
 
 	std::set<int> intSet;
 	intSet.insert(10);
 	intSet.insert(20);
 	intSet.insert(30);
-	std::set<int>::iterator it2 = easyfind(intSet, 40);
-	std::cout << *it2 << std::endl;
+	n = 40;
+	std::set<int>::iterator it2;
+	try
+	{
+		it2 = easyfind(intSet, n);
+		std::cout << *it2 << std::endl;
+	}
+	catch(...){std::cout << "value " << n << " not found" << std::endl;}
 	return 0;
 }
