@@ -3,7 +3,8 @@
 
 # include <fstream>
 # include <iostream>
-# include <vector>
+# include <map>
+# include <cstdlib>
 
 class BitcoinExchange
 {
@@ -13,7 +14,8 @@ class BitcoinExchange
 		BitcoinExchange& operator = ( const BitcoinExchange & rhs);
 		~BitcoinExchange( void );
 
-		static std::vector<std::string> _container;
+		// static std::vector<std::string>		_container;
+		static std::map<std::string, float>	_dataBase;
 
 	public:
 		static BitcoinExchange&			getInstance( void );
