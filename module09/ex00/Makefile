@@ -1,6 +1,8 @@
 SRCS = main.cpp\
 	   BitcoinExchange.cpp\
-
+	   ft_split.cpp\
+	   ft_strtrim.cpp\
+	   
 OBJS = $(SRCS:.cpp=.o)
 
 FLAGS = -Wextra -Wall -Werror -std=c++98 -g
