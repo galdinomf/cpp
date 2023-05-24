@@ -8,5 +8,7 @@ int	main( int argc, char* argv[] )
 
 	if (argc == 2)
 		btcEx.readFileAndLoadContainer(argv[1]);
+	else
+		std::cout << "No file name given!" << std::endl;
 	return 0;
 }

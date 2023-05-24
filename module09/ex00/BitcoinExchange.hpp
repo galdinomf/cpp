@@ -13,8 +13,7 @@ class BitcoinExchange
 		BitcoinExchange( const BitcoinExchange & src );
 		BitcoinExchange& operator = ( const BitcoinExchange & rhs);
 		~BitcoinExchange( void );
-
-		// static std::vector<std::string>		_container;
+		
 		static std::map<std::string, float>	_dataBase;
 
 		static bool	valueIsValid( std::string& value );

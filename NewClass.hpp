@@ -5,8 +5,8 @@ class NewClass
 {
 	public:
 		NewClass( void );
-		NewClass( const NewClass & src );
-		NewClass& operator = ( const NewClass & rhs);
+		NewClass( const NewClass & );
+		NewClass& operator = ( const NewClass & );
 		~NewClass( void );
 
 	private:
