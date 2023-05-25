@@ -3,7 +3,7 @@
 
 int	main( int argc, char* argv[] )
 {
-	if (argc == 2)
+	if ((argc == 2) && RPN::validateInput(argv[1]))
 	{
 		RPN::evaluateInput(argv[1]);
 		return 0;

@@ -4,6 +4,7 @@
 # include <stack>
 # include <string>
 # include <iostream>
+# include <sstream>
 
 class RPN
 {
@@ -15,7 +16,10 @@ class RPN
 
 		static std::stack<int>	_stack;
 
+		static bool	isSignal( char c );
+
 	public:
+		static bool	validateInput( const std::string & input );
 		static void	evaluateInput ( const std::string & );
 };
 
